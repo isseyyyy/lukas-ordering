@@ -1,0 +1,69 @@
+.section__hero {
+    z-index: 5;
+    position: relative;
+    background-image: url('../../assets/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    height: 100vh;
+    background-size: cover; 
+    padding: 40px;
+    filter: brightness(30%);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    background-color: var(--header-color);
+    padding: 20px;
+    border: 2px solid var(--main2-color);
+    z-index: 10;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    font-size: 14px;
+    border-radius: 6px;
+    line-height: 1.5;
+    padding: 5px 10px;
+    transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
+    border: 2px solid #dee1e2;
+    color: rgb(14, 14, 16);
+    background: #dee1e2;
+    display: block;
+    height: 36px;
+}
+input:hover {
+    border-color: #ccc;
+}
+input:focus{
+    border-color: #9147ff;
+    background: #fff;
+}
+
+
+button {
+    display: inline-block;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 30px;
+    background-color: #9147ff;
+    color: white;
+    padding: 0 10px;
+}
+button:hover {
+    background-color: #772ce8;
+}

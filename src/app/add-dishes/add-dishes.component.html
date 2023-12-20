@@ -1,0 +1,19 @@
+<div class="section__hero"></div>
+<form #productsForm="ngForm" (ngSubmit)="createProducts(productsForm.value)">
+  
+  <input  type="text" ngModel name="productName" placeholder="name">
+  <input  type="text" ngModel name="productImg" placeholder="image">
+  <input  type="text" ngModel name="productDesc" placeholder="desc">
+  <input  type="text" ngModel name="withNuts" placeholder="with nuts or not">
+  <input  type="text" ngModel name="isVegetarian" placeholder="vegetarian or not">
+  <input  type="text" ngModel name="productPrice" placeholder="price">
+  <input  type="text" ngModel name="productCategory" placeholder="category">
+  <input  type="submit" value="submit">
+  
+</form>
+
+
+<div class="container">
+  <div *ngFor="let item for allProduct">
+  </div>
+</div>

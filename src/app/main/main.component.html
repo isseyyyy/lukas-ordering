@@ -1,0 +1,124 @@
+<section>
+  <div class="section__hero"></div>
+  <h2 class="section__hero__text">
+    Fast And Efficient, Online Ordering You Must Try
+  </h2>
+  <main>
+    <div class="loading" *ngIf="isLoading">LOADING...</div>
+    <div class="categories">
+      <h1 class="main__categories">Categories</h1>
+      <div class="categories__btns">
+        <button class="categories__btn" (click)="filterProducts('all')">
+          All
+        </button>
+        <button class="categories__btn" (click)="filterProducts('main')">
+          Main
+        </button>
+        <button class="categories__btn" (click)="filterProducts('salad')">
+          Salad
+        </button>
+        <button class="categories__btn" (click)="filterProducts('side')">
+          side dishes
+        </button>
+        <button class="categories__btn" (click)="filterProducts('drink')">
+          drinks
+        </button>
+        <button class="categories__btn" (click)="filterProducts('deserts')">
+          deserts
+        </button>
+         <button class="categories__btn" (click)="filterProducts('spicy')">
+          Spicy
+        </button>
+      </div>
+    </div>
+    <div class="products">
+      <aside class="filter__box">
+        <form
+          #filterForm="ngForm"
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            class="filter__search"
+            ngModel
+            [ngModelOptions]="{ standalone: true }"
+            #searchInput
+            (keyup)="searching(searchInput.value)"
+          />
+          <!-- <label for="spiciness__range">Spiciness: {{ spiceText }}</label>
+          <input
+            #spicinessRef
+            (change)="changeSpice(spicinessRef)"
+            type="range"
+            min="0"
+            max="4"
+            step="1"
+            value="0"
+            id="spiciness__range"
+            class="range_slider"
+            name="spiciness__range"
+            ngModel
+            [ngModelOptions]="{ standalone: true }"
+            [(ngModel)]="filterOptions.spiciness"
+
+          /> -->
+          <div>
+            <input
+              checked="checked"
+              type="checkbox"
+              id="nuts custom-checkbox"
+              name="withNuts"
+              value="nuts"
+              ngModel
+              #vegetarianRef
+              (click)="filterNuts()"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <label class="custom-checkbox-label" for="nuts">
+              Without Nuts</label
+            >
+          </div>
+          <div>
+            <input
+              checked="checked"
+              type="checkbox"
+              id="vegetarian custom-checkbox"
+              name="isVegetarian"
+              value="vegetarian"
+              ngModel
+              #nutsRef
+              (change)="filterVegan()"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <label class="custom-checkbox-label" for="vegetarian">
+              Vegetarian Only</label
+            >
+          </div>
+
+          <button type="button" (click)="resetFilterForm(filterForm)" class="filter__button">RESET</button>
+        </form>
+      </aside>
+      <div class="product__list_grid">
+        <div *ngFor="let product of filteredProduct" class="products_list">
+          <img
+            src="{{ product.productImg }}"
+            alt="{{ product.productName }}"
+            class="product__img"
+          />
+          <h3 class="fs-5">{{ product.productName }}</h3>
+          <div class="product_icons">
+            <img class="product_icon" src="{{ product.withNuts == 'true' ? './../../../assets/wiwaka.png' : './../../../assets/nothing.png' }}"/>
+             <img class="product_icon" src="{{ product.withNuts == 'true' ? './../../../assets/nut.png' : './../../../assets/nothing.png' }}"/>
+             <img class="product_icon" src="{{ product.isVegetarian == 'true' ? './../../../assets/vegan.png' : './../../../assets/nothing.png'}}"/>
+          </div>
+          <div class="buying_div">
+            <h2 class="fs-5">{{ product.productPrice }} GEL</h2>
+            <button class="product__btn fs-5" (click)="addToBasket(product)">
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>

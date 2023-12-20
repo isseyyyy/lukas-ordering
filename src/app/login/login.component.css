@@ -1,0 +1,114 @@
+.section__hero {
+  z-index: 0;
+  position: relative;
+  background-image: url("../../assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+  height: 100vh;
+  background-size: cover;
+  padding: 40px;
+  filter: brightness(30%);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-box button:hover {
+  background: var(--main2-color);
+  color: black;
+  border-radius: 5px;
+}
+
+.login-box {
+  font-family: var(--font-family-paragraph);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  margin: 20px auto;
+  transform: translate(-50%, -55%);
+  background: var(--header-color);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box p:first-child {
+  margin: 0 0 30px;
+  padding: 0;
+  color: var(--main2-color);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--main2-color);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid var(--main2-color);
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--main2-color);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: var(--main2-color);
+  font-size: 12px;
+}
+
+.login-box form button {
+  width: 100%;
+
+}
+ 
+button {
+  width: 100%;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: var(--main2-color);
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 3px;
+}
+
+
+button:hover {
+  background: var(--main2-color);
+  color: black;
+  border-radius: 5px;
+}
+
+
+.login__warn {
+  color: red;
+  font-size: 120%;
+}

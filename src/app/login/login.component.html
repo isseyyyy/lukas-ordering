@@ -1,0 +1,19 @@
+<div class="section__hero"></div>
+<div class="login-box">
+  <p>Login</p>
+  <form [formGroup]="loginForm" (ngSubmit)="checkValue()">
+    <div class="user-box">
+      <input autocomplete="off" placeholder="Username" name="username" type="text" formControlName="username"/>
+      
+    </div>
+    <div class="user-box">
+      <input required name="password" type="password" placeholder="Password" formControlName="password"/>
+      
+    </div>
+    <div *ngIf="loginForm.invalid && loginForm.touched" class="login__warn">Error</div>
+    <button type="submit" [disabled]="loginForm.invalid">
+      SUBMIT
+    </button>
+  </form>
+</div>
+

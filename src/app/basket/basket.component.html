@@ -1,0 +1,31 @@
+<section>
+    <div class="section__hero"></div>
+    <h2 class="section__hero__text">Cart</h2>
+    <main>
+        <div class="loading" *ngIf="isLoading">LOADING...</div>
+        <h2 *ngIf="!isLoading"  [ngClass]="{'empty-style': !listEmpty}" class="text__list">YOUR CART LIST <h2 *ngIf="listEmpty">IS EMPTY</h2></h2>
+                    
+        <div class="product__list_grid">
+            <div *ngFor="let product of basketProduct, index as i" class="products_list">
+                <img src="{{ product.productImg }}" alt="{{ product.productName }}" class="product__img"/>
+                <h3 class="fs-5">{{ product.productName }}</h3>
+                <div class="product_icons">
+                    <img class="product_icon" src="{{ product.withNuts == 'true' ? './../../../assets/wiwaka.png' : './../../../assets/nothing.png' }}"/>
+                    <img class="product_icon" src="{{ product.withNuts == 'true' ? './../../../assets/nut.png' : './../../../assets/nothing.png' }}"/>
+                    <img class="product_icon" src="{{ product.isVegetarian == 'true' ? './../../../assets/vegan.png' : './../../../assets/nothing.png'}}"/>
+                </div>
+                <div class="buying_div">
+                    <h2 class="fs-5">{{ product.productPrice }} GEL</h2>
+                    <button class="product__btn" (click)="deleteFromBasket(product)">
+                        Remove From Cart
+                    </button>
+                </div>
+            </div>
+        </div> 
+        <div *ngIf="!listEmpty" class="total">
+            <h5>TOTAL: {{totalPrice}}</h5>
+            <button class="total__btn" routerLink="/finish">BUY NOW</button>
+        </div>   
+        
+    </main>
+</section>

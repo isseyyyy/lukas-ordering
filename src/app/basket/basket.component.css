@@ -1,0 +1,193 @@
+/*-------------SECTION-----------------*/
+.section__hero {
+    z-index: 5;
+    position: relative;
+    background-image: url('../../assets/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    height: 40vh;
+    background-size: cover; 
+    padding: 40px;
+    filter: brightness(20%);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.section__hero__text {
+    font-size: 300%;
+    letter-spacing: 4px;
+    font-family: var(--font-family-heading);
+    z-index: 10;
+    text-align: center;
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    color: var(--main-color);
+}
+
+/*-------------MAIN-----------------*/
+
+main {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading {
+    font-size: 200%;
+    font-family: var(--font-family-heading);
+}
+
+.text__list {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    font-family: var(--font-family-heading);
+    color: var(--header-color);
+    padding: 15px 0px;
+    height: 70vh;
+    transition: height 0.3s ease;
+}
+
+.empty-style {
+  height: auto;
+  overflow: hidden;
+}
+.product__img {
+    width: 18vw;
+    height: 18vw;
+    border-radius: 20px;
+}
+
+.product__list_grid {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.product_icons {
+    background-color: transparent;
+    display: flex;
+    gap: 20px;
+}
+
+.product_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.buying_div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.products_list {
+    border: 3px solid var(--header-color);
+    border-radius: 10px;
+    font-family: var(--font-family-paragraph);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    align-items: center;
+    transition: .2s;
+}
+
+.products_list:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.product__btn {
+    transition: .2s;
+    padding: 5px 10px;
+    background-color: var(--header-color);
+    color: var(--main-color);
+    border: 2px solid var(--main2-color);
+}
+
+.product__btn:hover {
+    border: 2px solid var(--main2-color);
+    background-color: transparent;
+    color: var(--main2-color);
+}
+
+.product__btn:active {
+    transform: scale(.9);
+    background-color: var(--main2-color);
+    color: var(--header2-color);
+}
+
+.products_list:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.product__btn {
+    transition: .2s;
+    padding: 5px 10px;
+    background-color: var(--main2-color);
+    color: var(--main-color);
+    border: 2px solid var(--main2-color);
+}
+
+.product__btn:hover {
+    border: 2px solid var(--main2-color);
+    background-color: transparent;
+    color: var(--main2-color);
+}
+
+.product__btn:active {
+    transform: scale(.9);
+    background-color: var(--main2-color);
+    color: var(--header2-color);
+}
+
+.total {
+    margin-top: 20px;
+    background-color: var(--header-color);
+    padding: 10px 50px;
+    border-radius: 2px;
+    border: 2px solid var(--main2-color);
+    color: var(--main2-color);
+}
+
+.total__btn{
+    font-size: 150%;
+    letter-spacing: 2px;
+    padding: 5px;
+    transition: .3s;
+    border-radius: 2px;
+}
+
+.total__btn:hover {
+    background: var(--main2-color);
+    color: var(--header-color);
+   
+}
+
+
+/*----------RESPONSIVE---------------*/
+
+
+@media screen and (max-width: 1200px) {
+
+    .product__list_grid {
+        grid-template-columns: 300px;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+
+    .product__list_grid {
+        grid-template-columns: 300px;
+    }
+
+}       
