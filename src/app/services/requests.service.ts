@@ -64,5 +64,9 @@ export class RequestsService {
     return this.http.delete(`${this.basketProductsAPI}/${productId}`);
   }
 
+  requestBasketClear() {
+    this.http.delete(this.basketProductsAPI)
+  }
+
   
 }

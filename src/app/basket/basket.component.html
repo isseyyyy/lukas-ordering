@@ -24,7 +24,7 @@
         </div> 
         <div *ngIf="!listEmpty" class="total">
             <h5>TOTAL: {{totalPrice}}</h5>
-            <button class="total__btn" routerLink="/finish">BUY NOW</button>
+            <button class="total__btn" (click)="removeBasket()" routerLink="/finish">BUY NOW</button>
         </div>   
         
     </main>

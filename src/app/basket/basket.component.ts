@@ -19,7 +19,7 @@ export class BasketComponent {
     this.productsFetch();
   }
 
-  productsFetch() {
+  productsFetch(): void {
     this.isLoading = true;
     this.request.requestGetBasket().subscribe((res) => {
       this.basketProduct = res;
@@ -29,7 +29,7 @@ export class BasketComponent {
     });
   }
 
-  isOrNotEmpty(res) {
+  isOrNotEmpty(res): void {
     this.listEmpty = !res || (Array.isArray(res) && res.length === 0);
   }
 
@@ -45,4 +45,7 @@ export class BasketComponent {
     }, 0);
   }
 
+  removeBasket(): void {
+    this.request.requestBasketClear()
+  }
 }
