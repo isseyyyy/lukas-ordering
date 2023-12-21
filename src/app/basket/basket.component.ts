@@ -45,7 +45,9 @@ export class BasketComponent {
     }, 0);
   }
 
-  removeBasket(): void {
-    this.request.requestBasketClear()
+  removeBasket() {
+    this.request.requestDeleteAllProducts().subscribe(() => {
+      this.productsFetch();
+    });
   }
 }

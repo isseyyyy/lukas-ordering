@@ -8,10 +8,12 @@ export class Product {
     isVegetarian: string;
     spiciness: number;
     productCategory: string;
+    quantity: number;
+    totalPrice: number
 }; 
 
 export class FilterOptions {
     withNuts: boolean;
     isVegetarian: boolean;
     spiciness: number;
-};
+};  

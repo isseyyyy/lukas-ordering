@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -57,15 +57,18 @@ export class RequestsService {
   }
 
   requestSearchProducts(allProducts: Product[], str: string) {
-    return allProducts.filter((product) => product.productName.toLowerCase().startsWith(str.toLowerCase()));
+    return allProducts.filter((product) =>
+      product.productName.toLowerCase().startsWith(str.toLowerCase())
+    );
   }
 
   requestDeleteProduct(productId: string) {
     return this.http.delete(`${this.basketProductsAPI}/${productId}`);
   }
 
-  requestBasketClear() {
-    this.http.delete(this.basketProductsAPI)
+  requestDeleteAllProducts(): Observable<any> {
+    const deleteAllUrl = `https://6533baa0e1b6f4c590462eea.mockapi.io/basket`; 
+    return this.http.delete(deleteAllUrl);
   }
 
   
