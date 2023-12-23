@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private router: Router) {}
 
   login(username: string, password: string): boolean {
-    let valid = username === 'admin' && password === 'KokoJambo22';
+    let valid = username === 'admin' && password === 'password';
 
     if (valid) {
       this.isAuthenticated = true;
