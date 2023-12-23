@@ -8,9 +8,9 @@ import { map, Observable } from 'rxjs';
 })
 export class RequestsService {
   public allProductsAPI: string =
-    'https://6533baa0e1b6f4c590462eea.mockapi.io/allProducts';
+    'YOUR API';
   public basketProductsAPI: string =
-    'https://6533baa0e1b6f4c590462eea.mockapi.io/basket';
+    'YOUR API';
 
   constructor(private http: HttpClient) {}
 
@@ -67,7 +67,7 @@ export class RequestsService {
   }
 
   requestDeleteAllProducts(): Observable<any> {
-    const deleteAllUrl = `https://6533baa0e1b6f4c590462eea.mockapi.io/basket`; 
+    const deleteAllUrl = `YOUR API`; 
     return this.http.delete(deleteAllUrl);
   }
 
