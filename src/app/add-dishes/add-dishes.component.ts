@@ -10,7 +10,7 @@ import { map } from 'rxjs';
 })
 export class AddDishesComponent implements OnInit {
   public myAPI: string =
-    'https://6533baa0e1b6f4c590462eea.mockapi.io/allProducts';
+    'YOUR API';
   public allProduct: Product[] = [];
   public filteredProduct: Product[] = [];
   public currentCategory: string = 'all';
@@ -49,7 +49,7 @@ export class AddDishesComponent implements OnInit {
 
   deleteItem(id: string) {
     this.http
-      .delete('https://6533baa0e1b6f4c590462eea.mockapi.io/allProducts/' + id)
+      .delete('YOUR API' + id)
       .subscribe();
   }
 }
